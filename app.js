@@ -15,14 +15,7 @@ p.textContent = "Enter a positive number";
 p.classList.add("wrong-input");
 
 formElem.submitBtn.addEventListener("click", (e) => {
-  if (
-    formElem.totalAmount.value <= 0 ||
-    formElem.tipPercent.value <= 0 ||
-    formElem.totalPerson.value <= 0
-  ) {
-    showError();
-    return;
-  }
+  
   if (
     formElem.totalAmount.value > 0 &&
     formElem.tipPercent.value > 0 &&
@@ -33,6 +26,9 @@ formElem.submitBtn.addEventListener("click", (e) => {
       Number(formElem.tipPercent.value),
       Number(formElem.totalPerson.value),
     );
+  }else{
+    showError();
+    return;
   }
 });
 const calculateTip = (total, tip, person) => {
@@ -40,6 +36,7 @@ const calculateTip = (total, tip, person) => {
   const totalPerPerson = (total / person + Number(tipPerPerson)).toFixed(2);
 
   showResult(tipPerPerson, totalPerPerson);
+
 };
 const showResult = (tipPerPerson, totalPerPerson) => {
   outputElem.tipPerPersonVal.textContent = `₹${tipPerPerson}`;
