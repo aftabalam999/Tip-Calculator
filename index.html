@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="purple"></div>
+    <div class="blue"></div>
     <h1>Tip Calculator</h1>
     <div class="container">
       <div id="form-container">
@@ -43,12 +45,15 @@
         <button id="submitBtn">Calculate</button>
       </div>
       <div class="output">
-        <p class="output-msg">Tip per person : 
+        <div class="output-top">
+        <p class="output-msg">Tip per person  <br>
         <span id="tip-per-person">₹ 0</span>
         </p>
-        <p class="output-msg">Total per person
+        <p class="output-msg">Total per person <br>
         <span id="total-per-person">₹ 0</span>
         </p>
+        </div>
+        <button id="resetBtn">Reset</button>
       </div>
     </div>
     <script src="./app.js"></script>
